@@ -34,7 +34,7 @@ class ViewController: UITableViewController, UISearchBarDelegate {
             }
             do {
                 if let httpResponse = response as? HTTPURLResponse {
-                    print("Status Code: \(httpResponse.statusCode)")
+                    print("HTTP Request Status Code: \(httpResponse.statusCode)")
                 }          //status code check
                 
                 let pokemonList = try JSONDecoder().decode(PokemonList.self, from: data)

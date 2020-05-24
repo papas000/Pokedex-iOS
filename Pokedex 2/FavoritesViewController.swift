@@ -3,6 +3,11 @@ import UIKit
 class FavoritesViewController: UITableViewController {
     var pokemons: [Pokemon] = []
     
+    @IBAction func releaseAll() {
+        PokemonManager.main.deleteAllPokemons()
+        reload()
+    }
+    
     func reload() {
         pokemons = PokemonManager.main.getAllPokemons()
         self.tableView.reloadData()

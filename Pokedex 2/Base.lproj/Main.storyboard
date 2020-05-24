@@ -100,7 +100,13 @@
                             <outlet property="delegate" destination="zrk-Xh-NGa" id="7uN-3w-29z"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Pokédex" id="b1r-pH-1VR"/>
+                    <navigationItem key="navigationItem" title="Pokédex" id="b1r-pH-1VR">
+                        <barButtonItem key="rightBarButtonItem" title="Release All" id="gQd-18-4Wc">
+                            <connections>
+                                <action selector="releaseAll" destination="zrk-Xh-NGa" id="jvt-Q8-C87"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JnM-Ho-B0d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -208,6 +214,6 @@
         <image name="pokeball" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="c6v-6e-Mua"/>
+        <segue reference="d2P-em-zcV"/>
     </inferredMetricsTieBreakers>
 </document>

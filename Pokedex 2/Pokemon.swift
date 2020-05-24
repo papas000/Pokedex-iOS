@@ -128,9 +128,26 @@ class PokemonManager {
         sqlite3_bind_text(statement, 1, NSString(string: pokemon.url).utf8String, -1, nil)
         
         if sqlite3_step(statement)  != SQLITE_DONE {
-            print("Could not delete note")
+            print("Could not delete pokemon")
         }
         
         sqlite3_finalize(statement)
+    }
+    
+    func deleteAllPokemons() {
+        connect()
+        
+        var statement: OpaquePointer!
+        if sqlite3_prepare_v2(database, "DELETE FROM pokemons", -1, &statement, nil) != SQLITE_OK {
+            print("Could not create delete statement")
+        }
+        
+        if sqlite3_step(statement)  != SQLITE_DONE {
+            print("Could not delete pokemons")
+        }
+        
+        sqlite3_finalize(statement)
+        
+        
     }
 }
